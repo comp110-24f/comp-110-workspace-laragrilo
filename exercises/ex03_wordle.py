@@ -8,18 +8,18 @@ def main(secret: str) -> None:
     number_of_turns: int = 1
     while number_of_turns <= 6:
         print(f"=== Turn {number_of_turns}/6 ===")
-        word_input = input_guess(5)
+        word_input = input_guess(len(secret))
         print(emojified(word_input, secret))
         if word_input == secret:
             print(f"You won in {number_of_turns}/6 turns!")
-            exit()
+            return
         number_of_turns += 1
     print("X/6 - Sorry, try again tomorrow!")
 
 
 def input_guess(secret_word_len: int) -> str:
     """Word input has to equal length of secret word"""
-    word_input = input(f"Enter a {secret_word_len}-character word: ")
+    word_input = input(f"Enter a {secret_word_len} character word: ")
     while len(word_input) != secret_word_len:
         word_input = input(f"That wasn't {secret_word_len} chars! Try again:")
     return word_input
