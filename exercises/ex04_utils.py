@@ -48,6 +48,7 @@ def is_equal(list_int1: list[int], list_int2: list[int]) -> bool:
 
 
 def extend(list_int1: list[int], list_int2: list[int]) -> None:
+    """Add one list's element to the other"""
     idx = 0
     # mutating by appending elements of list2 to list1
     while idx < len(list_int2):
